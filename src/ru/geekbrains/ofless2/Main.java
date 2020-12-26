@@ -11,6 +11,9 @@ public class Main {
 	int[][] c1 =new int[9][9];
 	int[] a1 ={1242,556,34,8,5334,7,9,0};
 	int[] d ={1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+	int[] g = {6,2,1,4,5,1,2,2,3,4,14,4,12,2,1,4,3,3,21,2};
+
+
 	for (int i = 0; i< a.length; i++)
     {
         if (a[i] == 1)
@@ -19,18 +22,23 @@ public class Main {
         }
 
     }
+
+
 	for (int i = 0; i< b.length; i++)
 	{
         if (b[i] == 0)
         {
             b[i]=1;
         }
-
 	}
+
+
 	for (int i=0,f=0; i< c.length; i++,f+=3)
     {
         c[i] = f;
     }
+
+
 	for (int i =0; i<d.length; i++)
     {
         if (d[i]<6)
@@ -38,6 +46,8 @@ public class Main {
             d[i]*=2;
         }
     }
+
+
 	for (int i =0; i< 9;i++)
     {
         for (int j = 0; j< 9;j++)
@@ -48,11 +58,10 @@ public class Main {
                 c1[i][j]=1;
 
             }
-
-
         }
-
     }
+
+
 
 	int maxi = a1[0];
 	int mini = a1[0];
@@ -64,7 +73,6 @@ public class Main {
 	        mini = a1[i];
 	    }
 	}
-
 
 
 	System.out.println("1"+Arrays.toString(a));
@@ -83,7 +91,40 @@ public class Main {
 
 	}
 	System.out.println("5)"+mini + " " + maxi);
+	System.out.println("6 "+Method6(g));
 
 
     }
+
+
+
+    private static boolean Method6(int[] g)
+	{
+		int summ = 0;
+		int summing = 0;
+		int summing2 = 0;
+		for (int i = 0; i<g.length; i++) {
+			summ +=g[i];
+		}
+		summ /=2;
+		for (int i = 0; i< g.length; i++)
+		{
+			summing +=g[i];
+			if (summing == summ)
+			{
+				for (int j = g.length-1; j>i; j--)
+				{
+					summing2 +=g[j];
+					if (summing2 == summing)
+					{
+						return true;
+					}
+				}
+
+			}
+		}
+		return false;//не знаю как сделать так, чтобы ошибка исчезла, мол метод долежн возвращать, а так ничего не возвращал. вот и запихал это сюда.
+
+
+	}
 }
