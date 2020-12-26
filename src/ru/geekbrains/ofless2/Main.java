@@ -117,14 +117,17 @@ public class Main {
 					summing2 +=g[j];
 					if (summing2 == summing)
 					{
-						return true;
+						break;
 					}
 				}
 
 			}
 		}
-		return false;//не знаю как сделать так, чтобы ошибка исчезла, мол метод долежн возвращать, а так ничего не возвращал. вот и запихал это сюда.
-
-
+		if (summing2 !=summing) {
+			return false;
+		}else
+		{
+			return true;
+		}
 	}
 }
