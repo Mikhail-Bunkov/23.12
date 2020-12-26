@@ -103,6 +103,7 @@ public class Main {
 
     private static boolean Method6(int[] g)
     {
+        int k=0;
         int summ = 0;
         int summing = 0;
         int summing2 = 0;
@@ -120,10 +121,15 @@ public class Main {
                     summing2 +=g[j];
                     if (summing2 == summing)
                     {
+                        k=1;
                         break;
                     }
                 }
 
+            }
+            if (k==1)
+            {
+                break;
             }
         }
         if (summing2 !=summing) {
@@ -136,6 +142,6 @@ public class Main {
 
     private static void Method7(int[] Hard, int n)
     {
-        System.out.println("Не смог xD");
+        System.out.println("7 Не смог xD");
     }
 }
